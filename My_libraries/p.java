@@ -35,15 +35,19 @@ public class p {
     }
 
     public static long hcf(long m, long n) {
-        long a = Math.max(m, n);
-        long b = Math.min(m, n);
-        long temp;
-        while (b != 0) {
-            temp = b;
-            b = a % b;
-            a = temp;
+        long x;
+        if (n > m) {
+            x = n;
+            n = m;
+            m = x;
         }
-        return a;
+        long temp;
+        while (n != 0) {
+            temp = n;
+            n = m % n;
+            m = temp;
+        }
+        return m;
     }
 
     public static int Array_max(int[] arr) {
